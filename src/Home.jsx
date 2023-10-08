@@ -19,7 +19,7 @@ const Home = () => {
   const handleSubmit = async (event) => {
     event.preventDefault(); 
     // console.log(inputUser);
-    const res = await axios.post("https://chandan-api.onrender.com/createuser", inputUser);
+    const res = await axios.post("https://chandan-api.onrender.com", inputUser);
     console.log(res);
     fetchAllUser();
   };
@@ -27,7 +27,7 @@ const Home = () => {
   // All Data fetching
   const [userData, setUserData] = useState([]);
   const fetchAllUser = async () => {
-    const res = await axios.get("https://chandan-api.onrender.com/readalluser");
+    const res = await axios.get("https://chandan-api.onrender.com");
     console.log(res);
     setUserData(res.data);
   };
@@ -36,7 +36,8 @@ const Home = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    const res = await axios.delete(`https://chandan-api.onrender.com/deleteuser/${id}`);
+    const res = await axios.delete(`https://chandan-api.onrender.com`);
+    // const res = await axios.delete(`https://chandan-api.onrender.com"${id}`);
     if (res.status === 200) {
       fetchAllUser();
     }

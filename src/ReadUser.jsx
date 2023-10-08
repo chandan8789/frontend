@@ -8,7 +8,8 @@ const ReadUser = () => {
   // All Data fetching
   const [userData, setUserData] = useState([]);
   const fetchSingleUser = async () => {
-    const res = await axios.get(`https://chandan-api.onrender.com/read/${id}`);
+    const res = await axios.get(`https://chandan-api.onrender.com`);
+    // const res = await axios.get(`https://chandan-api.onrender.com${id}`);
     console.log(res);
     setUserData(res.data);
   };
