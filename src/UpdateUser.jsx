@@ -35,7 +35,7 @@ const UpdateUser = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(inputUser);
-    const res = await axios.put(`http://localhost:4000/updateuser/${id}`,inputUser);
+    const res = await axios.put(`https://chandan-api.onrender.com/updateuser/${id}`,inputUser);
     console.log(res);
 
     if (res.status === 200) {
