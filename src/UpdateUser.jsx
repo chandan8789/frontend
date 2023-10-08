@@ -1,15 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import './Home.css'
 
 const UpdateUser = () => {
   const [inputUser, setInputUser] = useState({
     name: "",
     email: "",
-    password: "",
+    password: ""
   });
 
   const { id } = useParams();
+
   // data fetching single
   const fetchSingleUser = async () => {
     const res = await axios.get(`http://localhost:4000/read/${id}`);
@@ -68,6 +70,7 @@ const UpdateUser = () => {
             onChange={handleChnage}
           />
         </div>
+    
         <div className="">
           <label className=" text-sm text-gray-500 ">Password</label>
           <input
@@ -82,7 +85,7 @@ const UpdateUser = () => {
         </div>
 
         <div className="flex justify-center my-4">
-          <button type="submit" className="px-4 py-2 bg-yellow-400 rounded-sm">
+          <button type="submit" className="btn px-4 py-2 bg-yellow-400 rounded-sm">
             Update User
           </button>
         </div>
